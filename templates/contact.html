@@ -7,22 +7,39 @@ Contact|
 
 <div class="container-fluid my-3 px-0" style="height: 80px;">
     <img src="/static/img/p.jpg" class="d-block w-100" alt="...">
-    <h2 class="text-center" >Contact us</h2>
+    
 
+    <div class="container mx-8 pb-7">
+        <h2 class="text-center">Contact us</h2>
+        <form method="post" action="/contact">
+            {% csrf_token %}
+        <div class="my-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" name="name" id="name" placeholder="Enter your name">
+        </div>
+        <div class="my-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email">
+        </div>
+        <div class="mb-2">
+            <label for="phone" class="form-label">Phone no:</label>
+            <input type="number" class="form-control" name="phone" id="phone" placeholder="Enter your phone no.">
+        </div>
+        
+        <div class="mb-8">
+            <label for="desc" class="form-label">Why do you want to contact us..</label>
+            <textarea class="form-control" name="desc" id="desc" rows="3"></textarea>
+        </div> <br>
+        <div class="buttons my-8">
+            <button type="reset" class="btn btn-primary btn-lg"> Clear </button>
+            <button type="submit" class="btn btn-success btn-lg"> Submit </button>
 
-    <div class="container">
-    <div class="my-3">
-        <label for="email" class="form-label">Email address</label>
-        <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email">
+        </div>
+    </form>
+        
     </div>
-    <div class="mb-2">
-        <label for="phone" class="form-label">Phone no:</label>
-        <input type="number" class="form-control" name="phone" id="phone" placeholder="Enter your phone no.">
-    </div>
-    <div class="mb-8">
-        <label for="desc" class="form-label">Why do you want to contact us..</label>
-        <textarea class="form-control" name="desc" id="desc" rows="3"></textarea>
-    </div>
-</div>
+    
+
+    <br><br><br>
 </div>
 {% endblock body %}
